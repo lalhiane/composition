@@ -1,0 +1,87 @@
+.slider {
+    padding: $secPadding 0;
+    q {
+        display: block;
+        width: 80%;
+        margin: 0 auto 20px;
+        text-align: center;
+        line-height: 1.7;
+        letter-spacing: 1px;
+        color: #9c9c9c;
+        @include breakPoints("maxMobile") {
+            width: 100%;
+        }
+    }
+    .slider-img {
+        width: 100%;
+        height: 450px;
+        margin-bottom: 20px;
+        @include addBgImage("../imgs/slider.jpg");
+    }
+    .bullets {
+        @include makeItFlex(center, 10);
+        li {
+            width: 16px;
+            height: 16px;
+            background-color: $seconderyClr;
+            border-radius: $rounded;
+            border: 2px solid $seconderyClr;
+            cursor: pointer;
+            &.active,
+            &:hover {
+                border-color: #333;
+            }
+        }
+    }
+}
+
+.services {
+    padding: $secPadding 0;
+    @include breakPoints("maxMobile") {
+        .service {
+            text-align: center;
+        }
+    }
+    .service-title {
+        margin-bottom: 15px;
+        @include makeItFlex(flex-start, 10);
+        @include breakPoints("maxMobile") {
+            justify-content: center;
+        }
+        i {
+            font-size: $largeFont;
+        }
+        h3 {
+            @extend %head-title;
+        }
+    }
+    .service-desc {
+        margin-bottom: 15px;
+        @extend %paragraph;
+    }
+    .service-link {
+        @extend %link;
+    }
+}
+
+.players {
+    padding: $secPadding 0;
+    img {
+        margin: 0 auto;
+    }
+    .player-name {
+        margin: 15px 0;
+        @extend %head-title;
+    }
+    .player-desc {
+        margin-bottom: 15px;
+        @extend %paragraph;
+    }
+    .player-link {
+        @extend %link;
+    }
+}
+
+.lorem-ipsum {
+    padding: $secPadding 0;
+}

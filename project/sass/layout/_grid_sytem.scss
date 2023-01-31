@@ -1,0 +1,72 @@
+.container {
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+    @include breakPoints("minMobile") {
+        width: 750px;
+    }
+    @include breakPoints("minSmall") {
+        width: 970px;
+    }
+    @include breakPoints("minMedium") {
+        width: 1170px;
+    }
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 40px;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.col {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@for $i from 1 through $numberOfGrids {
+    .col-#{$i} {
+        width: percentage($i / $numberOfGrids);
+    }
+}
+
+@include breakPoints("exception") {
+    @for $i from 1 through $numberOfGrids {
+        .col-ex-#{$i} {
+            width: percentage($i / $numberOfGrids);
+        }
+    }
+}
+
+@include breakPoints("minMobile") {
+    @for $i from 1 through $numberOfGrids {
+        .col-sm-#{$i} {
+            width: percentage($i / $numberOfGrids);
+        }
+    }
+}
+
+@include breakPoints("minSmall") {
+    @for $i from 1 through $numberOfGrids {
+        .col-md-#{$i} {
+            width: percentage($i / $numberOfGrids);
+        }
+    }
+}
+
+@include breakPoints("minMedium") {
+    @for $i from 1 through $numberOfGrids {
+        .col-lg-#{$i} {
+            width: percentage($i / $numberOfGrids);
+        }
+    }
+}
+
+.full-width {
+    display: flex;
+    width: 100%;
+    height: auto;
+}

@@ -1,0 +1,28 @@
+.main-heading {
+    position: relative;
+    margin-bottom: 60px;
+    h2 {
+        padding: 10px 17px;
+        width: fit-content;
+        margin: 0 auto;
+        background: $mainClr;
+        border-radius: $radius;
+        letter-spacing: 1px;
+        font: {
+            weight: normal;
+            size: $largeFont;
+        }
+        color: $whiteClr;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        @include prefixer(transform, translateY(-50%), (webkit, moz, o, ms));
+        z-index: -1;
+        width: 100%;
+        height: 1px;
+        background-color: $seconderyClr;
+    }
+}

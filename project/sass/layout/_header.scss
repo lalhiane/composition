@@ -1,0 +1,61 @@
+.header {
+    padding: 20px 0;
+    border-bottom: 1px solid $seconderyClr;
+    .container {
+        position: relative;
+        @include makeItFlex(space-between, 15);
+    }
+    .logo {
+        h1 {
+            margin: 0 0 5px;
+            letter-spacing: 1px;
+            font-size: $largeFont;
+        }
+        p {
+            font-size: $smallFont;
+            color: $seconderyClr;
+        }
+    }
+    .navigation {
+        .btn {
+            padding: 8px 14px;
+            font-size: 18px;
+            display: none;
+            @include breakPoints("maxMobile") {
+                display: block;
+            }
+        }
+        .nav-links {
+            display: flex;
+            background-color: $mainClr;
+            border-radius: $radius;
+            @include breakPoints("maxMobile") {
+                position: absolute;
+                top: calc(100% + 20px);
+                left: 0;
+                width: 100%;
+                padding: 15px 0;
+                flex-direction: column;
+                border-radius: 0;
+                @include prefixer(clip-path, polygon(0 0, 100% 0, 100% 0, 0 0), (webkit, moz, o, ms));
+                transition: clip-path 0.5s linear;
+                &.active {
+                    @include prefixer(clip-path, polygon(0 0, 100% 0, 100% 100%, 0 100%), (webkit, moz, o, ms));
+                }
+            }
+            li {
+                a {
+                    display: block;
+                    padding: 15px;
+                    letter-spacing: 1px;
+                    font-size: $smallFont;
+                    color: $whiteClr;
+                    transition: color 0.3s ease-in-out;
+                    &:hover {
+                        color: #eee;
+                    }
+                }
+            }
+        }
+    }
+}

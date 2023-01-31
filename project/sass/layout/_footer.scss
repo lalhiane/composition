@@ -1,0 +1,58 @@
+.footer {
+    padding: $secPadding 0;
+    background-color: #eee;
+    .foot-title {
+        margin-bottom: 30px;
+        @extend %head-title;
+    }
+    .gallery {
+        .blog {
+            @include makeItFlex(flex-start, 10);
+            @include breakPoints("maxMobile") {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            &:not(:last-of-type) {
+                margin-bottom: 30px;
+            }
+            .blog-title {
+                margin-bottom: 5px;
+                @extend %head-title;
+                font-size: 16px;
+                @include breakPoints("maxMobile") {
+                    margin-top: 5px;
+                }
+            }
+            .blog-desc {
+                @extend %paragraph;
+            }
+        }
+    }
+    .info {
+        address {
+            @extend %paragraph;
+            font-size: $smallFont;
+            h4 {
+                letter-spacing: 1px;
+            }
+        }
+    }
+    .contact {
+        input:not([type="submit"]),
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: $radius;
+            font-size: $smallFont;
+            &:focus {
+                outline: none;
+            }
+        }
+        textarea {
+            height: 120px;
+            resize: none;
+        }
+    }
+}
